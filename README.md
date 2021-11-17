@@ -1,8 +1,12 @@
 # DHD Sheet Component
 
-Simple React DND Character Sheet Component
+Simple React DND Character Sheet Component (uses materialui)
 
 You can use the default browser's print option to generate a sheet PDF.
+
+## Online Demo
+
+You can find an online demo of the component [here](https://luisfontes19.github.io/dnd-sheet/)
 
 
 ## Examples
