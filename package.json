@@ -1,6 +1,6 @@
 {
   "name": "dnd-sheet-component",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://luisfontes19.github.io/dnd-sheet-component",
   "dependencies": {
     "@emotion/react": "^11.5.0",
@@ -15,8 +15,10 @@
     "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
     "build": "tsc --noEmit false",
-    "postbuild": "copyfiles package.json README.md ./dist",
-    "start": "react-scripts start"
+    "postbuild": "copyfiles -a package.json README.md ./dist",
+    "start": "react-scripts start",
+    "deploy:gh": "gh-pages -d dist",
+    "publish:npm": "npm run build && cd dist && npm publish"
   },
   "eslintConfig": {
     "extends": [
