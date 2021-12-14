@@ -90,7 +90,7 @@ const CharacterManager = () => {
     const fileReader = new FileReader()
     fileReader.onloadend = (event) => {
       const content = event?.target?.result?.toString() || "{}"
-      setChars(JSON.parse(content))
+      setChars({ ...chars, ...JSON.parse(content) })
     }
 
     fileReader.readAsText(file)
