@@ -228,4 +228,9 @@ export const DefaultChar = {
     "level8": { slots: 0, used: 0, spells: initializeSpellArray([], 8) },
     "level9": { slots: 0, used: 0, spells: initializeSpellArray([], 8) },
   },
+  "spellcastingClass": "",
+  "spellcastingAbility": "",
+  "spellSaveDC": 0,
+  "spellAttackBonus": 0,
+
 }

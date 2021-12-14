@@ -7,37 +7,30 @@ const SpellsHeader = (props: CharacterProps) => {
   const classes = useStyles();
   const { character, setCharacter } = props;
 
-  const onXpChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, xp: e.target.value })
-  const onPlayerNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, playerName: e.target.value })
-  const onAlignmentChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, alignment: e.target.value })
-  const onBackgroundChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, background: e.target.value })
-  const onRaceChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, race: e.target.value })
-  const onClassAndLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, classAndLevel: e.target.value })
-  const onCharNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, charName: e.target.value })
+  const onSpellCastingClassChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, spellcastingClass: e.target.value })
+  const onSpellCastingAbilityChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, spellcastingAbility: e.target.value })
+  const onSpellSaveDCChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, spellSaveDC: parseInt(e.target.value) })
+  const onSpellAttackBonusChange = (e: React.ChangeEvent<HTMLInputElement>) => setCharacter({ ...character, spellAttackBonus: parseInt(e.target.value) })
 
   return <Box className={classes.container} style={{ marginBottom: '0px' }}>
     <Grid container>
       <Grid item md={5}>
         <Box className={classes.charNameContainer}>
-          <input type="text" className={classes.charNameInput} />
-          Spellcasting Class
+          <input value={character.spellcastingClass} onChange={onSpellCastingClassChange} type="text" className={classes.charNameInput} /> Spellcasting Class
         </Box>
       </Grid>
       <Grid item md={7} >
         <Grid container className={`${classes.border}`}>
           <Grid item md={4} className={classes.gridItem}>
-            <input type="text" className={`${classes.skillInput} ${classes.fullWidth}`} />
-            SpellCasting Ability
+            <input value={character.spellcastingAbility} onChange={onSpellCastingAbilityChange} type="text" className={`${classes.skillInput} ${classes.fullWidth}`} /> SpellCasting Ability
           </Grid>
 
           <Grid item md={4} className={classes.gridItem}>
-            <input type="text" className={`${classes.skillInput} ${classes.fullWidth}`} />
-            Spell Save DC
+            <input value={character.spellSaveDC} onChange={onSpellSaveDCChange} type="text" className={`${classes.skillInput} ${classes.fullWidth}`} /> Spell Save DC
           </Grid>
 
           <Grid item md={4} className={classes.gridItem}>
-            <input type="text" className={`${classes.skillInput} ${classes.fullWidth}`} />
-            Spell Attack Bonus
+            <input value={character.spellAttackBonus} onChange={onSpellAttackBonusChange} type="text" className={`${classes.skillInput} ${classes.fullWidth}`} /> Spell Attack Bonus
           </Grid>
         </Grid>
       </Grid>
