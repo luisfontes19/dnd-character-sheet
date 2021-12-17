@@ -1,6 +1,6 @@
 {
   "name": "dnd-sheet-component",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://luisfontes19.github.io/dnd-sheet-component",
   "dependencies": {
     "@emotion/react": "^11.5.0",
